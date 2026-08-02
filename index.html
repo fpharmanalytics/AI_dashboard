@@ -26,11 +26,15 @@
     </div>
 
     <div class="header-actions">
+      <div class="source-control">
+        <span>Data source</span>
+        <strong id="sourceBadge" class="source-badge">Loading…</strong>
+      </div>
       <label class="month-control" for="monthSelect">
         <span>Reporting month</span>
         <select id="monthSelect" aria-label="Select reporting month"></select>
       </label>
-      <a id="staffLookupButton" class="button button-secondary is-disabled" href="#" aria-disabled="true">Check my usage securely</a>
+      <button id="staffLookupButton" class="button button-secondary" type="button">Check staff usage</button>
     </div>
   </header>
 
@@ -120,7 +124,7 @@
         <div class="panel-heading">
           <div>
             <p class="section-kicker">Action focus</p>
-            <h2>Room for improvement by unit</h2>
+            <h2>Room for improvement by Pusat Pengajian</h2>
           </div>
         </div>
         <div class="chart-wrap chart-wrap-tall"><canvas id="improvementChart"></canvas></div>
@@ -133,12 +137,12 @@
           <div>
             <p class="section-kicker">Usage leaders</p>
             <h2>Top 10 users</h2>
-            <p class="privacy-note">Identities are withheld on the public site. Full names may be shown only in the secure management view.</p>
+            <p class="privacy-note">Full name, Pusat Pengajian and usage are shown for the selected month.</p>
           </div>
         </div>
         <div class="table-scroll">
           <table>
-            <thead><tr><th>Rank</th><th>User</th><th>Unit</th><th>Usage</th><th>Active days</th></tr></thead>
+            <thead><tr><th>Rank</th><th>Full name</th><th>Pusat Pengajian / unit</th><th>Usage</th><th>Active days</th></tr></thead>
             <tbody id="topUsersTable"></tbody>
           </table>
         </div>
@@ -148,12 +152,12 @@
         <div class="panel-heading">
           <div>
             <p class="section-kicker">Operational view</p>
-            <h2>Unit scorecard</h2>
+            <h2>Pusat Pengajian scorecard</h2>
           </div>
         </div>
         <div class="table-scroll">
           <table>
-            <thead><tr><th>Unit</th><th>Active</th><th>Rate</th><th>Below threshold</th><th>Zero</th></tr></thead>
+            <thead><tr><th>Pusat Pengajian / unit</th><th>Active</th><th>Rate</th><th>Below threshold</th><th>Zero</th></tr></thead>
             <tbody id="centreTable"></tbody>
           </table>
         </div>
@@ -165,9 +169,57 @@
         <p class="section-kicker">Metric definition</p>
         <h2>How the KPI is calculated</h2>
       </div>
-      <p><strong>Active adoption rate = staff with Overall Usage ≥ 4 ÷ total staff × 100.</strong> The dashboard target is 80%. “Room for improvement” refers to staff with Overall Usage below 4 in the selected month.</p>
+      <p><strong>Active adoption rate = staff with Overall Usage ≥ 4 ÷ licensed staff in the selected month × 100.</strong> The dashboard target is 80%. “Room for improvement” refers to staff with Overall Usage below 4.</p>
     </section>
   </main>
+
+  <dialog id="staffLookupDialog" class="lookup-dialog">
+    <div class="lookup-dialog-header">
+      <div>
+        <p class="section-kicker">Individual trend</p>
+        <h2>Check usage by No. Pekerja</h2>
+      </div>
+      <button id="closeLookupButton" class="icon-button" type="button" aria-label="Close">×</button>
+    </div>
+
+    <form id="staffLookupForm" class="lookup-form">
+      <label for="staffIdInput">No. Pekerja</label>
+      <div class="lookup-input-row">
+        <input id="staffIdInput" name="staffId" inputmode="numeric" autocomplete="off" placeholder="Enter staff ID" required>
+        <button class="button button-primary" type="submit">Find usage</button>
+      </div>
+      <p class="lookup-hint">The dashboard returns the record that matches the entered staff ID. A colleague’s record can also be viewed when their staff ID is known.</p>
+    </form>
+
+    <div id="lookupMessage" class="lookup-message" hidden></div>
+
+    <section id="lookupResult" class="lookup-result" hidden>
+      <div class="lookup-person">
+        <div>
+          <p class="lookup-overline">Staff member</p>
+          <h3 id="lookupName">—</h3>
+          <p id="lookupCentre">—</p>
+        </div>
+        <span id="lookupStatus" class="status-chip">—</span>
+      </div>
+
+      <div class="lookup-kpis">
+        <div><span>Latest usage</span><strong id="lookupLatestUsage">—</strong></div>
+        <div><span>Latest active days</span><strong id="lookupLatestDays">—</strong></div>
+        <div><span>Target achievement</span><strong id="lookupProgress">—</strong></div>
+        <div><span>Active months</span><strong id="lookupActiveMonths">—</strong></div>
+      </div>
+
+      <div class="lookup-chart-wrap"><canvas id="staffTrendChart"></canvas></div>
+
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Month</th><th>Overall usage</th><th>Active days</th><th>Achievement</th><th>Status</th></tr></thead>
+          <tbody id="lookupTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </dialog>
 
   <footer>
     <p>Faculty of Pharmacy · Universiti Teknologi MARA</p>

@@ -1,11 +1,12 @@
 {
+  "ok": true,
   "metadata": {
     "title": "Faculty of Pharmacy Gemini Pro Adoption Dashboard",
     "year": 2026,
     "generatedAt": "2026-08-02",
     "sourceWorkbook": "FF Gemini Adoption Rate 2026(3).xlsx",
     "activeDefinition": "Overall Usage ≥ 4 in the selected month",
-    "privacyMode": "Public aggregate data only; no names, emails, or staff IDs are included."
+    "dataMode": "Embedded workbook snapshot. Configure the live Google Sheets API for automatic monthly updates."
   },
   "config": {
     "targetRate": 80,
@@ -62,7 +63,7 @@
       ],
       "centreStats": [
         {
-          "centre": "SAINS HAYAT",
+          "centre": "Pusat Pengajian Sains Hayat",
           "staff": 18,
           "active": 15,
           "roomForImprovement": 3,
@@ -72,7 +73,7 @@
           "zeroUsage": 1
         },
         {
-          "centre": "TEKNOLOGI FARMASEUTIKAL",
+          "centre": "Pusat Pengajian Teknologi Farmaseutikal",
           "staff": 10,
           "active": 8,
           "roomForImprovement": 2,
@@ -82,7 +83,7 @@
           "zeroUsage": 1
         },
         {
-          "centre": "PENTADBIRAN",
+          "centre": "Pentadbiran Fakulti",
           "staff": 12,
           "active": 9,
           "roomForImprovement": 3,
@@ -92,7 +93,7 @@
           "zeroUsage": 3
         },
         {
-          "centre": "FARMAKOLOGI",
+          "centre": "Pusat Pengajian Farmakologi",
           "staff": 18,
           "active": 13,
           "roomForImprovement": 5,
@@ -102,7 +103,7 @@
           "zeroUsage": 3
         },
         {
-          "centre": "KIMIA FARMASEUTIKAL",
+          "centre": "Pusat Pengajian Kimia Farmaseutikal",
           "staff": 7,
           "active": 5,
           "roomForImprovement": 2,
@@ -112,7 +113,7 @@
           "zeroUsage": 1
         },
         {
-          "centre": "AMALAN FARMASI & FARMASI KLINIKAL",
+          "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
           "staff": 24,
           "active": 17,
           "roomForImprovement": 7,
@@ -125,71 +126,71 @@
       "topUsers": [
         {
           "rank": 1,
-          "label": "User 01",
-          "centre": "FARMAKOLOGI",
+          "name": "AISYAH HASYILA BINTI JAHIDIN",
+          "centre": "Pusat Pengajian Farmakologi",
           "usage": 1586,
           "activeDays": 28
         },
         {
           "rank": 2,
-          "label": "User 02",
-          "centre": "FARMAKOLOGI",
+          "name": "ZOLKAPLI BIN ESHAK",
+          "centre": "Pusat Pengajian Farmakologi",
           "usage": 1266,
           "activeDays": 27
         },
         {
           "rank": 3,
-          "label": "User 03",
-          "centre": "AMALAN FARMASI & FARMASI KLINIKAL",
+          "name": "EZLINA BINTI USIR",
+          "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
           "usage": 1113,
           "activeDays": 26
         },
         {
           "rank": 4,
-          "label": "User 04",
-          "centre": "KIMIA FARMASEUTIKAL",
+          "name": "HANNIS FADZILLAH BINTI MOHSIN",
+          "centre": "Pusat Pengajian Kimia Farmaseutikal",
           "usage": 418,
           "activeDays": 18
         },
         {
           "rank": 5,
-          "label": "User 05",
-          "centre": "TEKNOLOGI FARMASEUTIKAL",
+          "name": "DR HAZEM CHOUKAIFE",
+          "centre": "Pusat Pengajian Teknologi Farmaseutikal",
           "usage": 337,
           "activeDays": 20
         },
         {
           "rank": 6,
-          "label": "User 06",
-          "centre": "KIMIA FARMASEUTIKAL",
+          "name": "NURHUDA BINTI MANSHOOR",
+          "centre": "Pusat Pengajian Kimia Farmaseutikal",
           "usage": 237,
           "activeDays": 5
         },
         {
           "rank": 7,
-          "label": "User 07",
-          "centre": "FARMAKOLOGI",
+          "name": "SITI SARAH SYAHIRAH BINTI KUSHAIRI",
+          "centre": "Pusat Pengajian Farmakologi",
           "usage": 236,
           "activeDays": 11
         },
         {
           "rank": 8,
-          "label": "User 08",
-          "centre": "KIMIA FARMASEUTIKAL",
+          "name": "MOHAMMAD HAFIZIE DIANEL BIN MOHD TAZIZI",
+          "centre": "Pusat Pengajian Kimia Farmaseutikal",
           "usage": 221,
           "activeDays": 16
         },
         {
           "rank": 9,
-          "label": "User 09",
-          "centre": "FARMAKOLOGI",
+          "name": "FAZLEEN HASLINDA BINTI MOHD HATTA",
+          "centre": "Pusat Pengajian Farmakologi",
           "usage": 160,
           "activeDays": 16
         },
         {
           "rank": 10,
-          "label": "User 10",
-          "centre": "TEKNOLOGI FARMASEUTIKAL",
+          "name": "NADZIRA BINTI MOHD HANIF",
+          "centre": "Pusat Pengajian Teknologi Farmaseutikal",
           "usage": 147,
           "activeDays": 14
         }
@@ -244,7 +245,7 @@
       ],
       "centreStats": [
         {
-          "centre": "PENTADBIRAN",
+          "centre": "Pentadbiran Fakulti",
           "staff": 12,
           "active": 12,
           "roomForImprovement": 0,
@@ -254,7 +255,7 @@
           "zeroUsage": 0
         },
         {
-          "centre": "AMALAN FARMASI & FARMASI KLINIKAL",
+          "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
           "staff": 24,
           "active": 20,
           "roomForImprovement": 4,
@@ -264,7 +265,7 @@
           "zeroUsage": 1
         },
         {
-          "centre": "FARMAKOLOGI",
+          "centre": "Pusat Pengajian Farmakologi",
           "staff": 18,
           "active": 15,
           "roomForImprovement": 3,
@@ -274,7 +275,7 @@
           "zeroUsage": 2
         },
         {
-          "centre": "TEKNOLOGI FARMASEUTIKAL",
+          "centre": "Pusat Pengajian Teknologi Farmaseutikal",
           "staff": 10,
           "active": 8,
           "roomForImprovement": 2,
@@ -284,7 +285,7 @@
           "zeroUsage": 1
         },
         {
-          "centre": "SAINS HAYAT",
+          "centre": "Pusat Pengajian Sains Hayat",
           "staff": 19,
           "active": 14,
           "roomForImprovement": 5,
@@ -294,7 +295,7 @@
           "zeroUsage": 3
         },
         {
-          "centre": "KIMIA FARMASEUTIKAL",
+          "centre": "Pusat Pengajian Kimia Farmaseutikal",
           "staff": 7,
           "active": 5,
           "roomForImprovement": 2,
@@ -307,76 +308,2388 @@
       "topUsers": [
         {
           "rank": 1,
-          "label": "User 01",
-          "centre": "FARMAKOLOGI",
+          "name": "AISYAH HASYILA BINTI JAHIDIN",
+          "centre": "Pusat Pengajian Farmakologi",
           "usage": 1707,
           "activeDays": 28
         },
         {
           "rank": 2,
-          "label": "User 02",
-          "centre": "FARMAKOLOGI",
+          "name": "ZOLKAPLI BIN ESHAK",
+          "centre": "Pusat Pengajian Farmakologi",
           "usage": 1384,
           "activeDays": 28
         },
         {
           "rank": 3,
-          "label": "User 03",
-          "centre": "AMALAN FARMASI & FARMASI KLINIKAL",
+          "name": "EZLINA BINTI USIR",
+          "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
           "usage": 956,
           "activeDays": 28
         },
         {
           "rank": 4,
-          "label": "User 04",
-          "centre": "TEKNOLOGI FARMASEUTIKAL",
+          "name": "NADZIRA BINTI MOHD HANIF",
+          "centre": "Pusat Pengajian Teknologi Farmaseutikal",
           "usage": 529,
           "activeDays": 28
         },
         {
           "rank": 5,
-          "label": "User 05",
-          "centre": "AMALAN FARMASI & FARMASI KLINIKAL",
+          "name": "MOHAMMAD SUHAIDI BIN SHA'ARI",
+          "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
           "usage": 461,
           "activeDays": 24
         },
         {
           "rank": 6,
-          "label": "User 06",
-          "centre": "FARMAKOLOGI",
+          "name": "SALFARINA BINTI RAMLI",
+          "centre": "Pusat Pengajian Farmakologi",
           "usage": 449,
           "activeDays": 10
         },
         {
           "rank": 7,
-          "label": "User 07",
-          "centre": "SAINS HAYAT",
+          "name": "GURMEET KAUR A/P SURINDAR SINGH",
+          "centre": "Pusat Pengajian Sains Hayat",
           "usage": 396,
           "activeDays": 14
         },
         {
           "rank": 8,
-          "label": "User 08",
-          "centre": "KIMIA FARMASEUTIKAL",
+          "name": "MOHAMMAD HAFIZIE DIANEL BIN MOHD TAZIZI",
+          "centre": "Pusat Pengajian Kimia Farmaseutikal",
           "usage": 387,
           "activeDays": 22
         },
         {
           "rank": 9,
-          "label": "User 09",
-          "centre": "AMALAN FARMASI & FARMASI KLINIKAL",
+          "name": "IZZATI BINTI ABDUL HALIM ZAKI",
+          "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
           "usage": 293,
           "activeDays": 16
         },
         {
           "rank": 10,
-          "label": "User 10",
-          "centre": "SAINS HAYAT",
+          "name": "KALAVATHY A/P RAMASAMY",
+          "centre": "Pusat Pengajian Sains Hayat",
           "usage": 228,
           "activeDays": 23
         }
       ]
     }
   ],
-  "dataQualityWarnings": []
+  "lookupIndex": {
+    "192316": {
+      "name": "AHMAD AZANI BIN OTHMAN",
+      "staffId": "192316",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 57,
+          "activeDays": 11,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 48,
+          "activeDays": 14,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "282077": {
+      "name": "AHMAD FAUZI BIN DALI",
+      "staffId": "282077",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 21,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 2,
+          "activeDays": 2,
+          "active": false,
+          "progress": 50
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "397234": {
+      "name": "AHMAD RASHIDI BIN MOHAMED TAHIR",
+      "staffId": "397234",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 3,
+          "activeDays": 3,
+          "active": false,
+          "progress": 75
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 54,
+          "activeDays": 17,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "279022": {
+      "name": "AIDA AZLINA BINTI ALI",
+      "staffId": "279022",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 9,
+          "activeDays": 6,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 22,
+          "activeDays": 8,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "207735": {
+      "name": "AISYAH HASYILA BINTI JAHIDIN",
+      "staffId": "207735",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 1586,
+          "activeDays": 28,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 1707,
+          "activeDays": 28,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "201223": {
+      "name": "AZWANDI BIN AHMAD",
+      "staffId": "201223",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 14,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "191715": {
+      "name": "CHOO CHEE YAN",
+      "staffId": "191715",
+      "centre": "Pusat Pengajian Kimia Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 73,
+          "activeDays": 8,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 64,
+          "activeDays": 3,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "166083": {
+      "name": "DATO' PROFESOR DR ABU BAKAR ABDUL MAJEED",
+      "staffId": "166083",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 39,
+          "activeDays": 5,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 29,
+          "activeDays": 7,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "398974": {
+      "name": "DR HAZEM CHOUKAIFE",
+      "staffId": "398974",
+      "centre": "Pusat Pengajian Teknologi Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 337,
+          "activeDays": 20,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 83,
+          "activeDays": 16,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "278133": {
+      "name": "EZLINA BINTI USIR",
+      "staffId": "278133",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 1113,
+          "activeDays": 26,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 956,
+          "activeDays": 28,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "298265": {
+      "name": "FAIROS BIN ABDUL HAMID",
+      "staffId": "298265",
+      "centre": "Pentadbiran Fakulti",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 40,
+          "activeDays": 7,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "362489": {
+      "name": "FARHANA FAKHIRA BINTI ISMAIL",
+      "staffId": "362489",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 8,
+          "activeDays": 6,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 9,
+          "activeDays": 7,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "245221": {
+      "name": "FAZLEEN HASLINDA BINTI MOHD HATTA",
+      "staffId": "245221",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 160,
+          "activeDays": 16,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 67,
+          "activeDays": 15,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "322047": {
+      "name": "FAZLIN BTE MOHD FAUZI",
+      "staffId": "322047",
+      "centre": "Pusat Pengajian Kimia Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 1,
+          "activeDays": 1,
+          "active": false,
+          "progress": 25
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        }
+      ],
+      "activeMonths": 0,
+      "monthsRecorded": 2,
+      "activeMonthRate": 0.0
+    },
+    "239952": {
+      "name": "GURMEET KAUR A/P SURINDAR SINGH",
+      "staffId": "239952",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 125,
+          "activeDays": 7,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 396,
+          "activeDays": 14,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "298485": {
+      "name": "HANIS HANUM BINTI ZULKIFLY",
+      "staffId": "298485",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 67,
+          "activeDays": 14,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 44,
+          "activeDays": 9,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "270403": {
+      "name": "HANNIS FADZILLAH BINTI MOHSIN",
+      "staffId": "270403",
+      "centre": "Pusat Pengajian Kimia Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 418,
+          "activeDays": 18,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 59,
+          "activeDays": 15,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "294557": {
+      "name": "HASSERI BIN HALIM",
+      "staffId": "294557",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 28,
+          "activeDays": 10,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "272443": {
+      "name": "HISYAM BIN ABDUL HAMID",
+      "staffId": "272443",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 15,
+          "activeDays": 6,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 30,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "173335": {
+      "name": "IBTISAM BINTI ABDUL WAHAB",
+      "staffId": "173335",
+      "centre": "Pusat Pengajian Kimia Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 2,
+          "activeDays": 1,
+          "active": false,
+          "progress": 50
+        }
+      ],
+      "activeMonths": 0,
+      "monthsRecorded": 2,
+      "activeMonthRate": 0.0
+    },
+    "341390": {
+      "name": "IZZATI BINTI ABDUL HALIM ZAKI",
+      "staffId": "341390",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 33,
+          "activeDays": 6,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 293,
+          "activeDays": 16,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "376640": {
+      "name": "JANATTUL AIN BINTI JAMAL",
+      "staffId": "376640",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 1,
+          "activeDays": 1,
+          "active": false,
+          "progress": 25
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 16,
+          "activeDays": 1,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "284240": {
+      "name": "JOHN SHIA KWONG SIEW",
+      "staffId": "284240",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 1,
+          "activeDays": 1,
+          "active": false,
+          "progress": 25
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 1,
+          "activeDays": 1,
+          "active": false,
+          "progress": 25
+        }
+      ],
+      "activeMonths": 0,
+      "monthsRecorded": 2,
+      "activeMonthRate": 0.0
+    },
+    "191922": {
+      "name": "KALAVATHY A/P RAMASAMY",
+      "staffId": "191922",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 40,
+          "activeDays": 10,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 228,
+          "activeDays": 23,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "397250": {
+      "name": "KHATER AHMED SAEED AL-JAPAIRAI",
+      "staffId": "397250",
+      "centre": "Pusat Pengajian Teknologi Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 130,
+          "activeDays": 15,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 139,
+          "activeDays": 14,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "274894": {
+      "name": "KHURIAH BINTI ABDUL HAMID",
+      "staffId": "274894",
+      "centre": "Pusat Pengajian Teknologi Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 19,
+          "activeDays": 8,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 59,
+          "activeDays": 12,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "192219": {
+      "name": "LIM SIONG MENG",
+      "staffId": "192219",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 1,
+          "activeDays": 1,
+          "active": false,
+          "progress": 25
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 28,
+          "activeDays": 8,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "202329": {
+      "name": "MAHMATHI A/P KARUPPANNAN",
+      "staffId": "202329",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 5,
+          "activeDays": 3,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 102,
+          "activeDays": 7,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "239143": {
+      "name": "MASHANI BINTI MOHAMAD",
+      "staffId": "239143",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 7,
+          "activeDays": 3,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 30,
+          "activeDays": 8,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "211608": {
+      "name": "MASSITA BINTI NORDIN",
+      "staffId": "211608",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 1,
+          "activeDays": 1,
+          "active": false,
+          "progress": 25
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        }
+      ],
+      "activeMonths": 0,
+      "monthsRecorded": 2,
+      "activeMonthRate": 0.0
+    },
+    "228219": {
+      "name": "MATHUMALAR A/P P LOGANATHAN",
+      "staffId": "228219",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 11,
+          "activeDays": 5,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 8,
+          "activeDays": 3,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "279556": {
+      "name": "MAZIANA BINTI MAHAMOOD",
+      "staffId": "279556",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 46,
+          "activeDays": 12,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 85,
+          "activeDays": 16,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "224925": {
+      "name": "MEOR MOHD REDZUAN B MEOR MOHD AFFANDI",
+      "staffId": "224925",
+      "centre": "Pusat Pengajian Teknologi Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 17,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 39,
+          "activeDays": 9,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "219846": {
+      "name": "MIZATON BINTI HAZIZUL HASAN",
+      "staffId": "219846",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 47,
+          "activeDays": 10,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 143,
+          "activeDays": 13,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "392226": {
+      "name": "MOHAMMAD HAFIZIE DIANEL BIN MOHD TAZIZI",
+      "staffId": "392226",
+      "centre": "Pusat Pengajian Kimia Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 221,
+          "activeDays": 16,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 387,
+          "activeDays": 22,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "383769": {
+      "name": "MOHAMMAD SUHAIDI BIN SHA'ARI",
+      "staffId": "383769",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 111,
+          "activeDays": 12,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 461,
+          "activeDays": 24,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "298870": {
+      "name": "MOHD ALIMUKHTI BIN MANSOR",
+      "staffId": "298870",
+      "centre": "Pentadbiran Fakulti",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 4,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 26,
+          "activeDays": 3,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "330929": {
+      "name": "MOHD FAIZ MUSTAFFA",
+      "staffId": "330929",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 8,
+          "activeDays": 2,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "339548": {
+      "name": "MOHD NUR FAKHRUZZAMAN BIN NOORIZHAB",
+      "staffId": "339548",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 13,
+          "activeDays": 5,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 1,
+      "activeMonthRate": 100.0
+    },
+    "313771": {
+      "name": "MOHD RAHIMI BIN MUDA",
+      "staffId": "313771",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 9,
+          "activeDays": 3,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 38,
+          "activeDays": 11,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "279048": {
+      "name": "MOHD SHAHEZWAN BIN ABD WAHAB",
+      "staffId": "279048",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 4,
+          "activeDays": 2,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "292504": {
+      "name": "MOHD SHIHABUDDIN BIN AHMAD NOORDEN",
+      "staffId": "292504",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 5,
+          "activeDays": 1,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 2,
+          "activeDays": 1,
+          "active": false,
+          "progress": 50
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "270924": {
+      "name": "MUHAMAD FAIZ BIN OTHMAN",
+      "staffId": "270924",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 26,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 22,
+          "activeDays": 5,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "346162": {
+      "name": "MUHAMMAD 'IZZUDDIN BIN ZAMERY",
+      "staffId": "346162",
+      "centre": "Pusat Pengajian Teknologi Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 6,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 2,
+          "activeDays": 2,
+          "active": false,
+          "progress": 50
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "358862": {
+      "name": "MUHAMMAD HARITH BIN ZULKIFLI",
+      "staffId": "358862",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        }
+      ],
+      "activeMonths": 0,
+      "monthsRecorded": 2,
+      "activeMonthRate": 0.0
+    },
+    "399708": {
+      "name": "MUHAMMAD SHARIL AIDIE IZLAN SAIFOOL BAHRI",
+      "staffId": "399708",
+      "centre": "Pentadbiran Fakulti",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 113,
+          "activeDays": 10,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 144,
+          "activeDays": 22,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "246673": {
+      "name": "NADIA BINTI JALALUDIN",
+      "staffId": "246673",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 24,
+          "activeDays": 6,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 36,
+          "activeDays": 9,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "393623": {
+      "name": "NADZIRA BINTI MOHD HANIF",
+      "staffId": "393623",
+      "centre": "Pusat Pengajian Teknologi Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 147,
+          "activeDays": 14,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 529,
+          "activeDays": 28,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "376598": {
+      "name": "NIK AISYAH NAJWA BT NIK MUSTAFFA SHAPRI",
+      "staffId": "376598",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 7,
+          "activeDays": 2,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 142,
+          "activeDays": 12,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "373054": {
+      "name": "NIK ATEERAH RASHEEDA BINTI MOHD ROCKY",
+      "staffId": "373054",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        }
+      ],
+      "activeMonths": 0,
+      "monthsRecorded": 2,
+      "activeMonthRate": 0.0
+    },
+    "297567": {
+      "name": "NOOR ANILIZAWATIMA BINTI SULONG",
+      "staffId": "297567",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 18,
+          "activeDays": 5,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 1,
+          "activeDays": 1,
+          "active": false,
+          "progress": 25
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "251914": {
+      "name": "NOOR JANNAH BINTI YOB",
+      "staffId": "251914",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 47,
+          "activeDays": 10,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 5,
+          "activeDays": 1,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "183875": {
+      "name": "NOR AMLIZAN BINTI RAMLI",
+      "staffId": "183875",
+      "centre": "Pusat Pengajian Teknologi Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 75,
+          "activeDays": 11,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 33,
+          "activeDays": 10,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "368658": {
+      "name": "NOR ELYZATUL AKMA BINTI HAMDAN",
+      "staffId": "368658",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 1,
+          "activeDays": 1,
+          "active": false,
+          "progress": 25
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 4,
+          "activeDays": 3,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "297554": {
+      "name": "NOR HAYATI BINTI ABU SAMAH",
+      "staffId": "297554",
+      "centre": "Pusat Pengajian Teknologi Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 68,
+          "activeDays": 16,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 157,
+          "activeDays": 19,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "287412": {
+      "name": "NOR KHAIZAN BINTI ANUAR",
+      "staffId": "287412",
+      "centre": "Pusat Pengajian Teknologi Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 21,
+          "activeDays": 6,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "201414": {
+      "name": "NORALISA BINTI MOHD NOOR",
+      "staffId": "201414",
+      "centre": "Pentadbiran Fakulti",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 26,
+          "activeDays": 10,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 102,
+          "activeDays": 12,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "189060": {
+      "name": "NORAZLINA BINTI AHMAD",
+      "staffId": "189060",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 3,
+          "activeDays": 3,
+          "active": false,
+          "progress": 75
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 2,
+          "activeDays": 2,
+          "active": false,
+          "progress": 50
+        }
+      ],
+      "activeMonths": 0,
+      "monthsRecorded": 2,
+      "activeMonthRate": 0.0
+    },
+    "256993": {
+      "name": "NORAZUA BINTI AHMAD",
+      "staffId": "256993",
+      "centre": "Pentadbiran Fakulti",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 22,
+          "activeDays": 9,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 49,
+          "activeDays": 10,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "279035": {
+      "name": "NOREEN BINTI HUSAIN",
+      "staffId": "279035",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 15,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "304913": {
+      "name": "NORHAYATI BINTI MOHD MONZAI",
+      "staffId": "304913",
+      "centre": "Pentadbiran Fakulti",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 13,
+          "activeDays": 3,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 8,
+          "activeDays": 5,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "177069": {
+      "name": "NORHAYATI BINTI MOHD ZAIN",
+      "staffId": "177069",
+      "centre": "Pentadbiran Fakulti",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 87,
+          "activeDays": 9,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "351128": {
+      "name": "NORKASIHAN BINTI IBRAHIM",
+      "staffId": "351128",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 10,
+          "activeDays": 6,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 41,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "341633": {
+      "name": "NUR DIYANA BINTI KAMARUZAMAN",
+      "staffId": "341633",
+      "centre": "Pentadbiran Fakulti",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 123,
+          "activeDays": 11,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 115,
+          "activeDays": 13,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "226211": {
+      "name": "NUR HALINA MUSTAFA",
+      "staffId": "226211",
+      "centre": "Pentadbiran Fakulti",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 27,
+          "activeDays": 8,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 172,
+          "activeDays": 19,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "341772": {
+      "name": "NUR SABIHA BINTI MD HUSSIN",
+      "staffId": "341772",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        }
+      ],
+      "activeMonths": 0,
+      "monthsRecorded": 2,
+      "activeMonthRate": 0.0
+    },
+    "336745": {
+      "name": "NUR SYAMIMI BINTI ARIFFIN",
+      "staffId": "336745",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 3,
+          "activeDays": 3,
+          "active": false,
+          "progress": 75
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 4,
+          "activeDays": 2,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "384056": {
+      "name": "NUR SYAZWANI BINTI TARIDI",
+      "staffId": "384056",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 104,
+          "activeDays": 15,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 223,
+          "activeDays": 18,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "365457": {
+      "name": "NUR WAHIDA BINTI ZULKIFLI",
+      "staffId": "365457",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 4,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 31,
+          "activeDays": 3,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "291136": {
+      "name": "NURFARHANA BINTI FERDAOS",
+      "staffId": "291136",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 24,
+          "activeDays": 12,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 148,
+          "activeDays": 18,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "252861": {
+      "name": "NURHUDA BINTI MANSHOOR",
+      "staffId": "252861",
+      "centre": "Pusat Pengajian Kimia Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 237,
+          "activeDays": 5,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 26,
+          "activeDays": 3,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "256964": {
+      "name": "NURUL AINI BAHAROM",
+      "staffId": "256964",
+      "centre": "Pentadbiran Fakulti",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 28,
+          "activeDays": 11,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 1,
+      "monthsRecorded": 2,
+      "activeMonthRate": 50.0
+    },
+    "259673": {
+      "name": "NURUL AQMAR BT MOHD NOR HAZALIN",
+      "staffId": "259673",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 4,
+          "activeDays": 3,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 10,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "380034": {
+      "name": "NURUL ASHIKIN BINTI JAMLUDIN",
+      "staffId": "380034",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 15,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 16,
+          "activeDays": 6,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "341219": {
+      "name": "NURUL IZZATI BINTI OSMAN",
+      "staffId": "341219",
+      "centre": "Pusat Pengajian Kimia Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 141,
+          "activeDays": 13,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 208,
+          "activeDays": 15,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "289274": {
+      "name": "SALFARINA BINTI RAMLI",
+      "staffId": "289274",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 63,
+          "activeDays": 7,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 449,
+          "activeDays": 10,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "376941": {
+      "name": "SALIHA BINTI AZLAN",
+      "staffId": "376941",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 57,
+          "activeDays": 10,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 20,
+          "activeDays": 6,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "312280": {
+      "name": "SHARIZA BINTI SAHUDIN",
+      "staffId": "312280",
+      "centre": "Pusat Pengajian Teknologi Farmaseutikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 3,
+          "activeDays": 2,
+          "active": false,
+          "progress": 75
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 0,
+          "activeDays": 0,
+          "active": false,
+          "progress": 0
+        }
+      ],
+      "activeMonths": 0,
+      "monthsRecorded": 2,
+      "activeMonthRate": 0.0
+    },
+    "196590": {
+      "name": "SHUBASHINI A/P GNANASAN",
+      "staffId": "196590",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 62,
+          "activeDays": 2,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 84,
+          "activeDays": 7,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "199982": {
+      "name": "SITI ALWANI BINTI ARIFFIN",
+      "staffId": "199982",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 31,
+          "activeDays": 17,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 20,
+          "activeDays": 13,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "289300": {
+      "name": "SITI AZMA BINTI JUSOH @ YUSOF",
+      "staffId": "289300",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 76,
+          "activeDays": 17,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 17,
+          "activeDays": 10,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "240352": {
+      "name": "SITI NOORAISHAH BINTI HUSSIN",
+      "staffId": "240352",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 45,
+          "activeDays": 11,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 19,
+          "activeDays": 5,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "392983": {
+      "name": "SITI SARAH SYAHIRAH BINTI KUSHAIRI",
+      "staffId": "392983",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 236,
+          "activeDays": 11,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 142,
+          "activeDays": 8,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "180904": {
+      "name": "TEH LAY KEK",
+      "staffId": "180904",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 70,
+          "activeDays": 14,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 15,
+          "activeDays": 7,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "185967": {
+      "name": "TINIATI BINTI AHMAD",
+      "staffId": "185967",
+      "centre": "Pentadbiran Fakulti",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 50,
+          "activeDays": 2,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 4,
+          "activeDays": 2,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "207751": {
+      "name": "YUSLINA BINTI ZAKARIA",
+      "staffId": "207751",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 19,
+          "activeDays": 4,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 39,
+          "activeDays": 8,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "292795": {
+      "name": "ZAFIRAH LIYANA BINTI ABDULLAH",
+      "staffId": "292795",
+      "centre": "Pusat Pengajian Sains Hayat",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 78,
+          "activeDays": 15,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 19,
+          "activeDays": 7,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    },
+    "348843": {
+      "name": "ZAKIAH BINTI MOHD NOORDIN",
+      "staffId": "348843",
+      "centre": "Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 2,
+          "activeDays": 1,
+          "active": false,
+          "progress": 50
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 2,
+          "activeDays": 2,
+          "active": false,
+          "progress": 50
+        }
+      ],
+      "activeMonths": 0,
+      "monthsRecorded": 2,
+      "activeMonthRate": 0.0
+    },
+    "276342": {
+      "name": "ZOLKAPLI BIN ESHAK",
+      "staffId": "276342",
+      "centre": "Pusat Pengajian Farmakologi",
+      "months": [
+        {
+          "key": "JUNE",
+          "month": "June 2026",
+          "usage": 1266,
+          "activeDays": 27,
+          "active": true,
+          "progress": 100
+        },
+        {
+          "key": "JULY",
+          "month": "July 2026",
+          "usage": 1384,
+          "activeDays": 28,
+          "active": true,
+          "progress": 100
+        }
+      ],
+      "activeMonths": 2,
+      "monthsRecorded": 2,
+      "activeMonthRate": 100.0
+    }
+  },
+  "dataQualityWarnings": [
+    {
+      "message": "1 staff record has no usable No. Pekerja and cannot be retrieved through the individual lookup."
+    }
+  ]
 }

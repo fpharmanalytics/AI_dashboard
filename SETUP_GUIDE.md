@@ -1,122 +1,157 @@
-# Step-by-step deployment guide
+# Step-by-step setup guide
 
-## Part A — Create the `fpharmanalytics` GitHub organisation
+## Part 1 — Prepare the live Google Sheet
 
-The requested address requires the repository owner to be named `fpharmanalytics`.
+1. Upload `FF Gemini Adoption Rate 2026(3).xlsx` to Google Drive.
+2. Open the file with Google Sheets.
+3. Confirm that the two tabs are named exactly:
+   - `Details`
+   - `Staff Info`
+4. Keep the column headings unchanged.
+5. In the Google Sheet URL, copy the long spreadsheet ID between `/d/` and `/edit`.
 
-1. Sign in to GitHub using your existing account.
-2. Click your profile picture at the top right.
-3. Select **Your organisations**.
-4. Click **New organisation**.
-5. Choose the free plan for the public aggregate dashboard.
-6. Enter the organisation name: `fpharmanalytics`.
-7. Enter your contact email and complete the setup.
-8. Keep your personal GitHub account as the organisation owner. You retain full administrative control.
+### Data structure for future months
 
-If the name is unavailable, the URL must use a different available organisation name, or you must use your existing username in the address.
+Add every new monthly record underneath the existing rows in `Details`.
 
-## Part B — Create the dashboard repository
+The dashboard expects these columns:
 
-1. Open the `fpharmanalytics` organisation page.
-2. Click **New repository**.
-3. Repository name: `AI-adoption`.
-4. Description: `Faculty of Pharmacy Gemini Pro adoption dashboard`.
-5. Select **Public**. The public repository must contain aggregate data only.
-6. Do not add a README, `.gitignore` or licence because these are already in the starter package.
-7. Click **Create repository**.
+- `BULAN`
+- `EMEL GWS`
+- `NAMA PENUH`
+- `Overall Usage`
+- `Active Days`
 
-The project-site URL pattern is:
+The `Staff Info` tab is matched using `EMEL GWS` and supplies:
 
-`https://<owner>.github.io/<repository>/`
+- `NO. PEKERJA`
+- `PUSAT PENGAJIAN`
+- staff full name
 
-Therefore the required URL will be:
+Do not create a separate sheet for each month. Continue appending records to the existing `Details` tab.
 
-`https://fpharmanalytics.github.io/AI-adoption/`
+## Part 2 — Create the live data service
 
-## Part C — Upload the dashboard files
+1. In the Google Sheet, select **Extensions → Apps Script**.
+2. Delete the default code.
+3. Copy all content from `live-data-app/Code.gs` into the Apps Script editor.
+4. Replace:
 
-### Easiest method: GitHub website
+```javascript
+spreadsheetId: 'PASTE_GOOGLE_SHEET_ID_HERE'
+```
 
-1. Extract `AI-adoption-dashboard-starter.zip` on your Mac.
-2. Open the new `AI-adoption` repository in GitHub.
-3. Click **Add file → Upload files**.
-4. Drag all contents from inside the extracted folder into the upload area. Upload the contents, not the outer folder itself.
-5. Confirm that `index.html` is visible at the top level of the repository.
-6. Enter the commit message: `Initial Gemini adoption dashboard`.
-7. Click **Commit changes**.
+with the Google Sheet ID copied earlier.
 
-### Alternative: GitHub Desktop
+5. Open **Project Settings**.
+6. Enable **Show “appsscript.json” manifest file in editor**.
+7. Open `appsscript.json` and replace it with the supplied `live-data-app/appsscript.json`.
+8. Save the project and name it `FF Gemini Adoption Live Data`.
 
-1. Clone `fpharmanalytics/AI-adoption` in GitHub Desktop.
-2. Open the local repository folder.
-3. Copy all starter-package contents into that folder.
-4. In GitHub Desktop, enter the summary `Initial Gemini adoption dashboard`.
-5. Click **Commit to main** and then **Push origin**.
+## Part 3 — Deploy the Apps Script
 
-## Part D — Turn on GitHub Pages
+1. Select **Deploy → New deployment**.
+2. Choose **Web app**.
+3. Description: `Gemini dashboard live data`.
+4. Set **Execute as** to `Me`.
+5. Set **Who has access** to `Anyone`.
+6. Select **Deploy** and complete the authorisation steps.
+7. Copy the deployment URL ending in `/exec`.
 
-1. In the repository, click **Settings**.
-2. In the left sidebar, click **Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select branch `main` and folder `/(root)`.
-5. Click **Save**.
-6. Return to the Pages screen and click **Visit site** after deployment completes.
+### Test the service
 
-The dashboard should appear at:
+Open the deployment URL with:
 
-`https://fpharmanalytics.github.io/AI-adoption/`
+`?action=ping`
 
-## Part E — Review the public dashboard
+appended to the end. A successful response contains:
 
-Before sharing the link:
+```json
+{"ok":true}
+```
 
-1. Select June and July from the month menu.
-2. Confirm that June contains 89 licensees and July contains 90 licensees.
-3. Confirm the month-specific adoption rates and centre totals shown in the dashboard match the corrected workbook.
-4. Check the charts on desktop and mobile.
-5. Confirm no names, emails or No. Pekerja values appear in the GitHub repository or page source.
+## Part 4 — Connect the dashboard to Google Sheets
 
-The public Top 10 is intentionally anonymised. Full names are available only through the secure management view described below.
-
-## Part F — Create the secure staff lookup
-
-1. Upload the workbook to Google Drive.
-2. Open it with Google Sheets and confirm the sheet names remain `Details` and `Staff Info`.
-3. Follow `private-lookup-app/README.md` to create and deploy the Apps Script web app.
-4. Restrict access to the UiTM Google Workspace domain.
-5. Test an ordinary staff account:
-   - correct No. Pekerja should display that staff member's record;
-   - another staff member's number should be rejected.
-6. Test a management email listed in `managerEmails`.
-7. Copy the Apps Script `/exec` URL.
-8. Edit `config.js` in GitHub and paste the URL:
+Open `config.js` and paste the `/exec` URL:
 
 ```javascript
 window.DASHBOARD_CONFIG = {
-  staffLookupUrl: "PASTE_THE_APPS_SCRIPT_EXEC_URL_HERE"
+  dataApiUrl: "YOUR_APPS_SCRIPT_EXEC_URL"
 };
 ```
 
-9. Commit the change. The **Check my usage securely** button will become active.
+Save the file.
 
-## Part G — Update the dashboard every month
+When the URL is configured, the header displays **Live Google Sheet**. If the service is unavailable, the dashboard automatically falls back to the embedded June–July snapshot.
 
-1. Add the new month's rows to the `Details` sheet in the Excel workbook.
-2. Update `Staff Info` only when staffing or Pusat Pengajian details change.
-3. Open `tools/monthly-updater.html` by double-clicking it on your Mac.
-4. Select the updated Excel workbook.
-5. Confirm threshold `4`, KPI target `80`, and year `2026`.
-6. Click **Process workbook**.
-7. Review the preview and any data-quality warnings.
-8. Click **Download dashboard-data.json**.
-9. In GitHub, open the `data` folder and replace `dashboard-data.json` with the newly generated file.
-10. Commit with a message such as `Add August 2026 Gemini usage`.
-11. Update the converted Google Sheet used by the secure Apps Script app. The private lookup reads the updated sheet automatically.
+## Part 5 — Upload to GitHub
 
-## Part H — Recommended governance
+### For an existing `AI-adoption` repository
 
-- Keep the original Excel workbook and converted Google Sheet restricted to authorised committee members.
-- Do not upload the raw workbook to the public repository.
-- Obtain faculty approval before publishing identifiable rankings, even in a domain-restricted management view.
-- Document the KPI definition as `Overall Usage ≥ 4`; the current workbook request contained both “more than 4” and “at least 4”, so the dashboard uses the latest stated rule: at least 4.
-- Assign at least one additional organisation owner to prevent loss of access, while keeping yourself as owner and repository administrator.
+1. Download and extract the revised package.
+2. Open the `fpharmanalytics/AI-adoption` repository.
+3. Replace the existing dashboard files with the contents of the revised package.
+4. Remove the old `private-lookup-app` and `tools/monthly-updater.html` files if they remain in the repository.
+5. Ensure `index.html` is located at the repository root.
+6. Commit the changes with:
+
+`Enable live Google Sheet updates and named Top 10`
+
+### GitHub Pages configuration
+
+1. Open **Settings → Pages**.
+2. Select **Deploy from a branch**.
+3. Select `main` and `/(root)`.
+4. Save.
+
+The site should remain at:
+
+`https://fpharmanalytics.github.io/AI-adoption/`
+
+## Part 6 — Test the dashboard
+
+Verify the following:
+
+1. The source badge says **Live Google Sheet**.
+2. June shows 89 licensed staff.
+3. July shows 90 licensed staff.
+4. June adoption is 75.3% and July adoption is 82.2%.
+5. Top 10 shows full names and full Pusat Pengajian names.
+6. The staff lookup returns the correct monthly trend after a valid No. Pekerja is entered.
+7. The chart and tables remain readable on a phone.
+
+## Part 7 — Monthly update procedure
+
+At the end of every month:
+
+1. Open the live Google Sheet.
+2. Append the new month's records to `Details`.
+3. Use the full English month name in `BULAN`, for example `AUGUST`.
+4. Update `Staff Info` when there is a new licensee, changed email, changed No. Pekerja or changed Pusat Pengajian.
+5. Wait up to five minutes for the dashboard cache to expire.
+6. Refresh the GitHub dashboard.
+
+The new month will automatically appear in the month selector and all analytics will be recalculated. No GitHub data file needs to be regenerated.
+
+## Pusat Pengajian display names
+
+The dashboard converts the current workbook categories to:
+
+- Pusat Pengajian Amalan Farmasi dan Farmasi Klinikal
+- Pusat Pengajian Farmakologi
+- Pusat Pengajian Kimia Farmaseutikal
+- Pusat Pengajian Sains Hayat
+- Pusat Pengajian Teknologi Farmaseutikal
+- Pentadbiran Fakulti
+
+These labels can be changed in the `centreDisplay_()` function in `live-data-app/Code.gs` when the faculty confirms a different official wording.
+
+## Current data note
+
+One record in `Staff Info` has No. Pekerja recorded as `0`. The staff member remains included in the faculty and Pusat Pengajian analytics but cannot be found through the individual lookup until a valid No. Pekerja is entered in the Google Sheet.
+
+## Access and privacy limitation
+
+The GitHub page and its live data endpoint are technically public. The lookup requires a valid No. Pekerja but does not verify the visitor's UiTM Google identity. Anyone who knows a staff ID and the dashboard address can retrieve that staff member's trend.
+
+For genuinely faculty-only authentication in the future, the dashboard would need to be hosted behind an identity-aware service rather than ordinary public GitHub Pages.

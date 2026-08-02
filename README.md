@@ -1,52 +1,41 @@
-# Faculty of Pharmacy Gemini Pro Adoption Dashboard
+# Faculty of Pharmacy Gemini Pro Adoption Dashboard — Live Data Version
 
-A ready-to-deploy static dashboard for:
+Deployment address:
 
 `https://fpharmanalytics.github.io/AI-adoption/`
 
-The public site contains aggregate data only. The secure individual lookup is supplied as a separate Google Apps Script web app.
+## Improvements in this version
 
-## Included files
+- Reads directly from a live Google Sheet through Google Apps Script.
+- Updates automatically after new monthly rows are added to the `Details` sheet.
+- Shows full names, full Pusat Pengajian names and usage for the Top 10 users.
+- Provides a staff-ID lookup within the dashboard.
+- Allows a valid staff ID to retrieve that staff member's complete monthly trend.
+- Uses the corrected denominators: 89 licensees in June 2026 and 90 in July 2026.
+- Keeps the existing UiTM–Google visual design.
 
-- `index.html` — public dashboard page
-- `styles.css` — UiTM purple/white/gold/grey theme with Google accent colours
-- `app.js` — charts and dashboard interaction
-- `config.js` — secure staff-lookup URL
-- `data/dashboard-data.json` — aggregate June and July 2026 data
-- `tools/monthly-updater.html` — local Excel-to-JSON updater; no installation required
-- `private-lookup-app/` — domain-restricted staff self-service and management view
-- `.nojekyll` — tells GitHub Pages to serve the files directly
+## Folder contents
 
-## Current workbook findings
+- `index.html` — dashboard interface and staff lookup dialog
+- `styles.css` — UiTM purple, white, gold and grey theme with Google accents
+- `app.js` — live data loading, charts, tables and individual trend lookup
+- `config.js` — Google Apps Script data-service URL
+- `data/dashboard-data.json` — current workbook snapshot and offline fallback
+- `live-data-app/Code.gs` — Google Sheets live data service
+- `live-data-app/appsscript.json` — Apps Script project manifest
+- `SETUP_GUIDE.md` — complete deployment instructions
+- `.nojekyll` — serves files directly through GitHub Pages
 
-Using an active threshold of `Overall Usage ≥ 4`:
+## Monthly workflow after setup
 
-- Total staff: 90
-- Active users: 74
-- Adoption rate: 82.2%
-- KPI target: 80%
-- Minimum active users needed: 72
-- Margin above target: 2 users / 2.2 percentage points
-- Room for improvement: 16 staff
-- Zero usage: 8 staff
-- Near target with 1–3 uses: 8 staff
+1. Add the new month's usage rows to the Google Sheet's `Details` tab.
+2. Add or amend staff details in `Staff Info` when necessary.
+3. Refresh the GitHub dashboard after approximately five minutes.
 
-Data-quality warning: June and July contain identical `Overall Usage` and `Active Days` values for all 90 staff. Verify the July source data before interpreting the trend.
+No new JSON file or GitHub commit is required for routine monthly data updates.
 
-## Why individual data is separate
+## Important access note
 
-GitHub Pages is static hosting. Any staff IDs, emails, names or individual records placed in JavaScript or JSON files can be downloaded by visitors, even when the page only displays one matching record. The public repository therefore contains no raw staff records.
+GitHub Pages is a public static website. The live Apps Script service must also allow public read access so the page can retrieve data without a separate sign-in flow. The individual lookup is therefore controlled by knowledge of a valid staff ID rather than verified UiTM identity.
 
-The secure Apps Script application:
-
-- requires a signed-in UiTM Google account;
-- checks the entered No. Pekerja against the signed-in email;
-- returns only the matching staff record to ordinary users;
-- gives named Top 10 and management summaries only to configured manager emails.
-
-See `SETUP_GUIDE.md` for the complete deployment procedure.
-
-
-## Corrected source data
-
-This package was regenerated from `FF Gemini Adoption Rate 2026(3).xlsx`. The source contains 89 licensed users in June 2026 and 90 in July 2026.
+The main dashboard does not display staff IDs. It returns one individual's trend only after a matching ID is entered. This matches the requested low-confidentiality use model but is not strong security.
