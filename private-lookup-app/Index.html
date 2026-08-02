@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root { --purple:#4b1f6f; --purple2:#6f3a91; --gold:#c7a34a; --grey:#6d6872; --green:#207a43; --red:#b42318; }
+    *{box-sizing:border-box} body{margin:0;background:#f4f1f7;color:#1d1920;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    .ribbon{display:grid;grid-template-columns:repeat(4,1fr);height:5px}.ribbon i:nth-child(1){background:#4285f4}.ribbon i:nth-child(2){background:#ea4335}.ribbon i:nth-child(3){background:#fbbc05}.ribbon i:nth-child(4){background:#34a853}
+    header{background:linear-gradient(135deg,var(--purple),#2f123f);color:#fff;padding:25px max(18px,calc((100vw - 980px)/2));border-bottom:4px solid var(--gold)}
+    h1{margin:0 0 6px;font-size:1.65rem} header p{margin:0;color:#ded3e4}
+    main{width:min(980px,calc(100% - 28px));margin:22px auto 40px}.card{background:#fff;border:1px solid #e8e2eb;border-radius:16px;padding:22px;box-shadow:0 14px 32px rgba(48,28,61,.08);margin-bottom:16px}
+    .context{display:flex;justify-content:space-between;gap:14px;align-items:center}.badge{background:#f3eefa;color:var(--purple);padding:6px 10px;border-radius:999px;font-size:.76rem;font-weight:800}
+    label{display:grid;gap:7px;font-size:.84rem;font-weight:800}input,select{width:100%;padding:11px 12px;border:1px solid #cbc3d1;border-radius:9px;font:inherit}button{border:0;border-radius:9px;padding:11px 16px;background:var(--purple);color:#fff;font-weight:800;cursor:pointer}button.secondary{background:var(--gold);color:#28192d}.row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end}
+    .message{padding:12px 14px;border-radius:9px;background:#f7f5f8;color:#514b56;margin-top:14px}.message.error{background:#fff0ed;color:var(--red)}.message.good{background:#edf7f0;color:var(--green)}
+    .profile{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.metric{background:#faf8fb;border:1px solid #eee9f0;border-radius:12px;padding:14px}.metric span{display:block;color:var(--grey);font-size:.72rem;text-transform:uppercase;font-weight:800;letter-spacing:.05em}.metric strong{display:block;margin-top:6px;font-size:1.2rem;color:var(--purple)}
+    table{width:100%;border-collapse:collapse;font-size:.84rem}th,td{padding:10px 8px;text-align:left;border-bottom:1px solid #eeeaf0}th{color:var(--grey);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}.status{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:.72rem;font-weight:800;background:#edf7f0;color:var(--green)}.status.bad{background:#fff0ed;color:var(--red)}
+    .progress{height:8px;background:#e6e0e9;border-radius:999px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--purple2),var(--gold));border-radius:inherit}
+    .management{border-top:4px solid var(--gold)}.hidden{display:none}.scroll{overflow-x:auto}h2{font-size:1.08rem;margin:0 0 15px}.muted{color:var(--grey);font-size:.82rem}.management-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:700px){.profile{grid-template-columns:1fr 1fr}.row,.management-grid{grid-template-columns:1fr}.context{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+<div class="ribbon"><i></i><i></i><i></i><i></i></div>
+<header><h1>Gemini Pro Usage — Secure Staff View</h1><p>Faculty of Pharmacy · Universiti Teknologi MARA</p></header>
+<main>
+  <section class="card">
+    <div class="context"><div><h2>Account verification</h2><p id="accountText" class="muted">Checking your UiTM account…</p></div><span id="roleBadge" class="badge hidden"></span></div>
+  </section>
+
+  <section class="card">
+    <h2>Check monthly usage</h2>
+    <div class="row"><label>No. Pekerja<input id="staffId" inputmode="numeric" autocomplete="off" placeholder="Enter your staff number"></label><button id="lookupButton" disabled>View usage</button></div>
+    <div id="lookupMessage" class="message">Your No. Pekerja will be matched against the signed-in UiTM account.</div>
+  </section>
+
+  <section id="resultCard" class="card hidden">
+    <h2 id="staffName">Staff usage</h2>
+    <div class="profile">
+      <div class="metric"><span>No. Pekerja</span><strong id="resultStaffId">—</strong></div>
+      <div class="metric"><span>Pusat / Unit</span><strong id="resultCentre">—</strong></div>
+      <div class="metric"><span>Latest usage</span><strong id="resultUsage">—</strong></div>
+      <div class="metric"><span>Latest status</span><strong id="resultStatus">—</strong></div>
+    </div>
+    <div class="scroll"><table><thead><tr><th>Month</th><th>Overall usage</th><th>Active days</th><th>KPI progress</th><th>Status</th></tr></thead><tbody id="usageRows"></tbody></table></div>
+  </section>
+
+  <section id="managementCard" class="card management hidden">
+    <h2>Management view</h2>
+    <p class="muted">This section is available only to email addresses listed in <code>managerEmails</code>.</p>
+    <div class="row"><label>Month<select id="managementMonth"></select></label><button id="managementButton" class="secondary">Load summary</button></div>
+    <div id="managementMessage" class="message">Select a month to load the named management summary.</div>
+    <div id="managementResults" class="hidden">
+      <div class="profile">
+        <div class="metric"><span>Adoption rate</span><strong id="mRate">—</strong></div>
+        <div class="metric"><span>Active users</span><strong id="mActive">—</strong></div>
+        <div class="metric"><span>Below threshold</span><strong id="mBelow">—</strong></div>
+        <div class="metric"><span>Zero usage</span><strong id="mZero">—</strong></div>
+      </div>
+      <div class="management-grid">
+        <div class="scroll"><h2>Named Top 10</h2><table><thead><tr><th>Name</th><th>Unit</th><th>Usage</th></tr></thead><tbody id="managementTop"></tbody></table></div>
+        <div class="scroll"><h2>Unit scorecard</h2><table><thead><tr><th>Unit</th><th>Rate</th><th>Below</th></tr></thead><tbody id="managementCentres"></tbody></table></div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+const lookupButton=document.getElementById('lookupButton');
+const message=document.getElementById('lookupMessage');
+let appContext;
+
+google.script.run.withSuccessHandler(context=>{
+  appContext=context;
+  if(!context.ok){document.getElementById('accountText').textContent=context.message;message.className='message error';message.textContent=context.message;return;}
+  document.getElementById('accountText').textContent=`Signed in as ${context.email}`;
+  const role=document.getElementById('roleBadge');role.classList.remove('hidden');role.textContent=context.isManager?'Management access':'Staff self-service';
+  lookupButton.disabled=false;
+  if(context.isManager){document.getElementById('managementCard').classList.remove('hidden');loadManagement();}
+}).withFailureHandler(showFatal).getAppContext();
+
+lookupButton.addEventListener('click',()=>{
+  const id=document.getElementById('staffId').value.trim();
+  if(!id){showLookupError('Enter your No. Pekerja.');return;}
+  lookupButton.disabled=true;message.className='message';message.textContent='Retrieving usage…';
+  google.script.run.withSuccessHandler(renderUsage).withFailureHandler(error=>{lookupButton.disabled=false;showLookupError(error.message||String(error));}).lookupUsage(id);
+});
+
+document.getElementById('managementButton').addEventListener('click',loadManagement);
+
+function renderUsage(result){
+  lookupButton.disabled=false;message.className='message good';message.textContent=result.definition;
+  document.getElementById('resultCard').classList.remove('hidden');document.getElementById('staffName').textContent=result.staff.name;
+  document.getElementById('resultStaffId').textContent=result.staff.staffId;document.getElementById('resultCentre').textContent=result.staff.centre;
+  document.getElementById('resultUsage').textContent=result.latest.usage.toLocaleString();document.getElementById('resultStatus').textContent=result.latest.active?'Active':'Room for improvement';
+  document.getElementById('usageRows').innerHTML=result.months.map(row=>`<tr><td>${escapeHtml(row.month)}</td><td><strong>${row.usage.toLocaleString()}</strong></td><td>${row.activeDays}</td><td><div class="progress"><i style="width:${row.progress}%"></i></div><small>${row.progress}% of minimum</small></td><td><span class="status ${row.active?'':'bad'}">${row.active?'Active':'Below threshold'}</span></td></tr>`).join('');
+}
+
+function loadManagement(){
+  const select=document.getElementById('managementMonth');
+  const month=select.value||'';document.getElementById('managementMessage').textContent='Loading management summary…';
+  google.script.run.withSuccessHandler(result=>{
+    if(!select.options.length){select.innerHTML=result.availableMonths.map(m=>`<option value="${m}">${titleCase(m)}</option>`).join('');select.value=result.availableMonths.at(-1);if(!month&&select.value!==result.availableMonths.at(-1))return loadManagement();}
+    document.getElementById('managementMessage').className='message good';document.getElementById('managementMessage').textContent=`${result.month}: secure named management data loaded.`;
+    document.getElementById('managementResults').classList.remove('hidden');
+    document.getElementById('mRate').textContent=`${result.adoptionRate.toFixed(1)}%`;document.getElementById('mActive').textContent=`${result.active}/${result.staff}`;document.getElementById('mBelow').textContent=result.belowThreshold;document.getElementById('mZero').textContent=result.zeroUsage;
+    document.getElementById('managementTop').innerHTML=result.topUsers.map(row=>`<tr><td>${escapeHtml(row.name)}</td><td>${escapeHtml(row.centre)}</td><td><strong>${row.usage.toLocaleString()}</strong></td></tr>`).join('');
+    document.getElementById('managementCentres').innerHTML=result.centreStats.map(row=>`<tr><td>${escapeHtml(row.centre)}</td><td>${row.rate.toFixed(1)}%</td><td>${row.below}</td></tr>`).join('');
+  }).withFailureHandler(error=>{document.getElementById('managementMessage').className='message error';document.getElementById('managementMessage').textContent=error.message||String(error);}).getManagementSummary(month);
+}
+
+function showLookupError(text){message.className='message error';message.textContent=text;document.getElementById('resultCard').classList.add('hidden');}
+function showFatal(error){document.getElementById('accountText').textContent=error.message||String(error);}
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
+function titleCase(v){return String(v).toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());}
+</script>
+</body>
+</html>

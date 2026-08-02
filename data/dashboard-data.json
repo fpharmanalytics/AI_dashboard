@@ -1,0 +1,382 @@
+{
+  "metadata": {
+    "title": "Faculty of Pharmacy Gemini Pro Adoption Dashboard",
+    "year": 2026,
+    "generatedAt": "2026-08-02",
+    "sourceWorkbook": "FF Gemini Adoption Rate 2026(3).xlsx",
+    "activeDefinition": "Overall Usage ≥ 4 in the selected month",
+    "privacyMode": "Public aggregate data only; no names, emails, or staff IDs are included."
+  },
+  "config": {
+    "targetRate": 80,
+    "activeThreshold": 4,
+    "latestMonth": "JULY"
+  },
+  "months": [
+    {
+      "key": "JUNE",
+      "label": "June 2026",
+      "staff": 89,
+      "activeUsers": 67,
+      "roomForImprovement": 22,
+      "adoptionRate": 75.3,
+      "targetRate": 80,
+      "targetActiveUsers": 72,
+      "kpiGapUsers": -5,
+      "kpiGapPercentagePoints": -4.7,
+      "totalUsage": 8116,
+      "medianUsage": 19.0,
+      "meanUsage": 91.2,
+      "averageActiveDays": 7.2,
+      "medianActiveDays": 5.0,
+      "zeroUsage": 11,
+      "nearTarget": 11,
+      "sustainedUsers": 35,
+      "powerUsers": 17,
+      "top10UsageShare": 70.5,
+      "engagementBands": [
+        {
+          "label": "No usage (0)",
+          "count": 11
+        },
+        {
+          "label": "Near target (1–3)",
+          "count": 11
+        },
+        {
+          "label": "Active (4–9)",
+          "count": 13
+        },
+        {
+          "label": "Regular (10–49)",
+          "count": 25
+        },
+        {
+          "label": "High (50–99)",
+          "count": 12
+        },
+        {
+          "label": "Power (100+)",
+          "count": 17
+        }
+      ],
+      "centreStats": [
+        {
+          "centre": "SAINS HAYAT",
+          "staff": 18,
+          "active": 15,
+          "roomForImprovement": 3,
+          "adoptionRate": 83.3,
+          "totalUsage": 666,
+          "medianUsage": 35.0,
+          "zeroUsage": 1
+        },
+        {
+          "centre": "TEKNOLOGI FARMASEUTIKAL",
+          "staff": 10,
+          "active": 8,
+          "roomForImprovement": 2,
+          "adoptionRate": 80.0,
+          "totalUsage": 802,
+          "medianUsage": 43.5,
+          "zeroUsage": 1
+        },
+        {
+          "centre": "PENTADBIRAN",
+          "staff": 12,
+          "active": 9,
+          "roomForImprovement": 3,
+          "adoptionRate": 75.0,
+          "totalUsage": 385,
+          "medianUsage": 17.5,
+          "zeroUsage": 3
+        },
+        {
+          "centre": "FARMAKOLOGI",
+          "staff": 18,
+          "active": 13,
+          "roomForImprovement": 5,
+          "adoptionRate": 72.2,
+          "totalUsage": 3539,
+          "medianUsage": 21.0,
+          "zeroUsage": 3
+        },
+        {
+          "centre": "KIMIA FARMASEUTIKAL",
+          "staff": 7,
+          "active": 5,
+          "roomForImprovement": 2,
+          "adoptionRate": 71.4,
+          "totalUsage": 1091,
+          "medianUsage": 141.0,
+          "zeroUsage": 1
+        },
+        {
+          "centre": "AMALAN FARMASI & FARMASI KLINIKAL",
+          "staff": 24,
+          "active": 17,
+          "roomForImprovement": 7,
+          "adoptionRate": 70.8,
+          "totalUsage": 1633,
+          "medianUsage": 9.5,
+          "zeroUsage": 2
+        }
+      ],
+      "topUsers": [
+        {
+          "rank": 1,
+          "label": "User 01",
+          "centre": "FARMAKOLOGI",
+          "usage": 1586,
+          "activeDays": 28
+        },
+        {
+          "rank": 2,
+          "label": "User 02",
+          "centre": "FARMAKOLOGI",
+          "usage": 1266,
+          "activeDays": 27
+        },
+        {
+          "rank": 3,
+          "label": "User 03",
+          "centre": "AMALAN FARMASI & FARMASI KLINIKAL",
+          "usage": 1113,
+          "activeDays": 26
+        },
+        {
+          "rank": 4,
+          "label": "User 04",
+          "centre": "KIMIA FARMASEUTIKAL",
+          "usage": 418,
+          "activeDays": 18
+        },
+        {
+          "rank": 5,
+          "label": "User 05",
+          "centre": "TEKNOLOGI FARMASEUTIKAL",
+          "usage": 337,
+          "activeDays": 20
+        },
+        {
+          "rank": 6,
+          "label": "User 06",
+          "centre": "KIMIA FARMASEUTIKAL",
+          "usage": 237,
+          "activeDays": 5
+        },
+        {
+          "rank": 7,
+          "label": "User 07",
+          "centre": "FARMAKOLOGI",
+          "usage": 236,
+          "activeDays": 11
+        },
+        {
+          "rank": 8,
+          "label": "User 08",
+          "centre": "KIMIA FARMASEUTIKAL",
+          "usage": 221,
+          "activeDays": 16
+        },
+        {
+          "rank": 9,
+          "label": "User 09",
+          "centre": "FARMAKOLOGI",
+          "usage": 160,
+          "activeDays": 16
+        },
+        {
+          "rank": 10,
+          "label": "User 10",
+          "centre": "TEKNOLOGI FARMASEUTIKAL",
+          "usage": 147,
+          "activeDays": 14
+        }
+      ]
+    },
+    {
+      "key": "JULY",
+      "label": "July 2026",
+      "staff": 90,
+      "activeUsers": 74,
+      "roomForImprovement": 16,
+      "adoptionRate": 82.2,
+      "targetRate": 80,
+      "targetActiveUsers": 72,
+      "kpiGapUsers": 2,
+      "kpiGapPercentagePoints": 2.2,
+      "totalUsage": 10366,
+      "medianUsage": 29.5,
+      "meanUsage": 115.2,
+      "averageActiveDays": 8.9,
+      "medianActiveDays": 7.5,
+      "zeroUsage": 8,
+      "nearTarget": 8,
+      "sustainedUsers": 45,
+      "powerUsers": 23,
+      "top10UsageShare": 65.5,
+      "engagementBands": [
+        {
+          "label": "No usage (0)",
+          "count": 8
+        },
+        {
+          "label": "Near target (1–3)",
+          "count": 8
+        },
+        {
+          "label": "Active (4–9)",
+          "count": 8
+        },
+        {
+          "label": "Regular (10–49)",
+          "count": 34
+        },
+        {
+          "label": "High (50–99)",
+          "count": 9
+        },
+        {
+          "label": "Power (100+)",
+          "count": 23
+        }
+      ],
+      "centreStats": [
+        {
+          "centre": "PENTADBIRAN",
+          "staff": 12,
+          "active": 12,
+          "roomForImprovement": 0,
+          "adoptionRate": 100.0,
+          "totalUsage": 804,
+          "medianUsage": 44.5,
+          "zeroUsage": 0
+        },
+        {
+          "centre": "AMALAN FARMASI & FARMASI KLINIKAL",
+          "staff": 24,
+          "active": 20,
+          "roomForImprovement": 4,
+          "adoptionRate": 83.3,
+          "totalUsage": 2592,
+          "medianUsage": 34.5,
+          "zeroUsage": 1
+        },
+        {
+          "centre": "FARMAKOLOGI",
+          "staff": 18,
+          "active": 15,
+          "roomForImprovement": 3,
+          "adoptionRate": 83.3,
+          "totalUsage": 4273,
+          "medianUsage": 29.0,
+          "zeroUsage": 2
+        },
+        {
+          "centre": "TEKNOLOGI FARMASEUTIKAL",
+          "staff": 10,
+          "active": 8,
+          "roomForImprovement": 2,
+          "adoptionRate": 80.0,
+          "totalUsage": 1062,
+          "medianUsage": 49.0,
+          "zeroUsage": 1
+        },
+        {
+          "centre": "SAINS HAYAT",
+          "staff": 19,
+          "active": 14,
+          "roomForImprovement": 5,
+          "adoptionRate": 73.7,
+          "totalUsage": 889,
+          "medianUsage": 17.0,
+          "zeroUsage": 3
+        },
+        {
+          "centre": "KIMIA FARMASEUTIKAL",
+          "staff": 7,
+          "active": 5,
+          "roomForImprovement": 2,
+          "adoptionRate": 71.4,
+          "totalUsage": 746,
+          "medianUsage": 59.0,
+          "zeroUsage": 1
+        }
+      ],
+      "topUsers": [
+        {
+          "rank": 1,
+          "label": "User 01",
+          "centre": "FARMAKOLOGI",
+          "usage": 1707,
+          "activeDays": 28
+        },
+        {
+          "rank": 2,
+          "label": "User 02",
+          "centre": "FARMAKOLOGI",
+          "usage": 1384,
+          "activeDays": 28
+        },
+        {
+          "rank": 3,
+          "label": "User 03",
+          "centre": "AMALAN FARMASI & FARMASI KLINIKAL",
+          "usage": 956,
+          "activeDays": 28
+        },
+        {
+          "rank": 4,
+          "label": "User 04",
+          "centre": "TEKNOLOGI FARMASEUTIKAL",
+          "usage": 529,
+          "activeDays": 28
+        },
+        {
+          "rank": 5,
+          "label": "User 05",
+          "centre": "AMALAN FARMASI & FARMASI KLINIKAL",
+          "usage": 461,
+          "activeDays": 24
+        },
+        {
+          "rank": 6,
+          "label": "User 06",
+          "centre": "FARMAKOLOGI",
+          "usage": 449,
+          "activeDays": 10
+        },
+        {
+          "rank": 7,
+          "label": "User 07",
+          "centre": "SAINS HAYAT",
+          "usage": 396,
+          "activeDays": 14
+        },
+        {
+          "rank": 8,
+          "label": "User 08",
+          "centre": "KIMIA FARMASEUTIKAL",
+          "usage": 387,
+          "activeDays": 22
+        },
+        {
+          "rank": 9,
+          "label": "User 09",
+          "centre": "AMALAN FARMASI & FARMASI KLINIKAL",
+          "usage": 293,
+          "activeDays": 16
+        },
+        {
+          "rank": 10,
+          "label": "User 10",
+          "centre": "SAINS HAYAT",
+          "usage": 228,
+          "activeDays": 23
+        }
+      ]
+    }
+  ],
+  "dataQualityWarnings": []
+}

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gemini Dashboard Monthly Updater</title>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <style>
+    :root { --purple:#4b1f6f; --gold:#c7a34a; --grey:#6d6872; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#f4f1f7; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; color:#201c23; }
+    header { background:linear-gradient(135deg,var(--purple),#2f123f); color:#fff; padding:28px max(22px,calc((100vw - 900px)/2)); border-bottom:4px solid var(--gold); }
+    h1 { margin:0 0 8px; font-size:1.8rem; } header p { margin:0; color:#ded3e4; }
+    main { width:min(900px,calc(100% - 28px)); margin:24px auto; }
+    .card { background:#fff; border:1px solid #e7e1eb; border-radius:16px; padding:22px; box-shadow:0 14px 34px rgba(48,28,61,.08); margin-bottom:16px; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    label { display:grid; gap:7px; font-weight:750; font-size:.84rem; }
+    input { width:100%; padding:11px 12px; border:1px solid #cbc3d1; border-radius:9px; font:inherit; }
+    button { background:var(--purple); color:#fff; border:0; border-radius:10px; padding:12px 17px; font-weight:800; cursor:pointer; }
+    button:disabled { opacity:.45; cursor:not-allowed; }
+    .notice { border-left:5px solid var(--gold); background:#fff8e6; padding:13px 15px; border-radius:10px; line-height:1.5; }
+    .status { white-space:pre-wrap; padding:14px; background:#f7f5f8; border-radius:10px; min-height:80px; color:#4b4650; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.8rem; }
+    table { width:100%; border-collapse:collapse; margin-top:12px; font-size:.84rem; }
+    th,td { padding:9px; text-align:left; border-bottom:1px solid #eeeaf0; }
+    th { color:var(--grey); text-transform:uppercase; font-size:.7rem; letter-spacing:.06em; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:16px; }
+    .muted { color:var(--grey); font-size:.84rem; }
+    @media(max-width:650px){ .grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Gemini Dashboard Monthly Updater</h1>
+  <p>This tool runs locally in your browser. The selected Excel file is not uploaded anywhere.</p>
+</header>
+<main>
+  <div class="notice"><strong>Privacy:</strong> The generated public JSON contains aggregate statistics only. It excludes names, emails and staff IDs. Do not upload the original Excel workbook to a public GitHub repository.</div>
+
+  <section class="card">
+    <div class="grid">
+      <label>Excel workbook
+        <input id="fileInput" type="file" accept=".xlsx,.xls">
+      </label>
+      <label>Reporting year
+        <input id="yearInput" type="number" min="2020" max="2100" value="2026">
+      </label>
+      <label>Active usage threshold
+        <input id="thresholdInput" type="number" min="1" value="4">
+      </label>
+      <label>Faculty KPI target (%)
+        <input id="targetInput" type="number" min="1" max="100" value="80">
+      </label>
+    </div>
+    <div class="actions">
+      <button id="processButton" disabled>Process workbook</button>
+      <button id="downloadButton" disabled>Download dashboard-data.json</button>
+      <span class="muted">Required sheets: <strong>Details</strong> and <strong>Staff Info</strong>.</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Processing log</h2>
+    <div id="status" class="status">Select the monthly Excel workbook.</div>
+  </section>
+
+  <section id="previewCard" class="card" hidden>
+    <h2>Preview</h2>
+    <table>
+      <thead><tr><th>Month</th><th>Staff</th><th>Active</th><th>Rate</th><th>Below threshold</th><th>Total usage</th></tr></thead>
+      <tbody id="previewBody"></tbody>
+    </table>
+  </section>
+</main>
+<script>
+const monthOrder = ['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+let generatedData = null;
+const fileInput = document.getElementById('fileInput');
+const processButton = document.getElementById('processButton');
+const downloadButton = document.getElementById('downloadButton');
+const statusBox = document.getElementById('status');
+
+fileInput.addEventListener('change', () => { processButton.disabled = !fileInput.files.length; });
+processButton.addEventListener('click', processWorkbook);
+downloadButton.addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(generatedData, null, 2)], {type:'application/json'});
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'dashboard-data.json';
+  link.click();
+  URL.revokeObjectURL(link.href);
+});
+
+async function processWorkbook() {
+  try {
+    downloadButton.disabled = true;
+    statusBox.textContent = 'Reading workbook…';
+    const file = fileInput.files[0];
+    const buffer = await file.arrayBuffer();
+    const workbook = XLSX.read(buffer, {type:'array'});
+    requireSheet(workbook, 'Details');
+    requireSheet(workbook, 'Staff Info');
+
+    const details = XLSX.utils.sheet_to_json(workbook.Sheets['Details'], {defval:''});
+    const staff = XLSX.utils.sheet_to_json(workbook.Sheets['Staff Info'], {defval:''});
+    const threshold = Number(document.getElementById('thresholdInput').value || 4);
+    const targetRate = Number(document.getElementById('targetInput').value || 80);
+    const year = Number(document.getElementById('yearInput').value || new Date().getFullYear());
+
+    if (!details.length || !staff.length) throw new Error('One or both required sheets contain no records.');
+    const staffMap = new Map(staff.map(row => [normaliseEmail(row['EMEL GWS']), row]));
+    const records = details.map(row => {
+      const email = normaliseEmail(row['EMEL GWS']);
+      const info = staffMap.get(email);
+      if (!info) throw new Error(`No Staff Info match for ${email || '(blank email)'}.`);
+      return {
+        month:String(row['BULAN'] || '').trim().toUpperCase(),
+        email,
+        centre:String(info['PUSAT PENGAJIAN'] || 'TIDAK DIPADANKAN').trim(),
+        usage:toNumber(row['Overall Usage']),
+        activeDays:toNumber(row['Active Days'])
+      };
+    }).filter(r => r.month);
+
+    const months = [...new Set(records.map(r => r.month))].sort((a,b) => monthOrder.indexOf(a) - monthOrder.indexOf(b));
+    if (!months.length) throw new Error('No valid month values were found in the BULAN column.');
+
+    const monthObjects = months.map(month => buildMonth(records.filter(r => r.month === month), month, year, threshold, targetRate));
+    const warnings = findDuplicateMonths(records, months);
+    generatedData = {
+      metadata:{
+        title:'Faculty of Pharmacy Gemini Pro Adoption Dashboard',
+        year,
+        generatedAt:new Date().toISOString().slice(0,10),
+        sourceWorkbook:file.name,
+        activeDefinition:`Overall Usage ≥ ${threshold} in the selected month`,
+        privacyMode:'Public aggregate data only; no names, emails, or staff IDs are included.'
+      },
+      config:{targetRate, activeThreshold:threshold, latestMonth:months.at(-1)},
+      months:monthObjects,
+      dataQualityWarnings:warnings
+    };
+
+    document.getElementById('previewBody').innerHTML = monthObjects.map(m => `<tr><td>${m.label}</td><td>${m.staff}</td><td>${m.activeUsers}</td><td>${m.adoptionRate.toFixed(1)}%</td><td>${m.roomForImprovement}</td><td>${m.totalUsage.toLocaleString()}</td></tr>`).join('');
+    document.getElementById('previewCard').hidden = false;
+    downloadButton.disabled = false;
+    statusBox.textContent = `Completed successfully.\n${records.length} monthly records matched to ${staff.length} staff records.\nMonths: ${months.join(', ')}.${warnings.length ? `\nWARNING: ${warnings.map(w => w.message).join(' ')}` : ''}\n\nDownload the JSON and replace data/dashboard-data.json in the GitHub repository.`;
+  } catch (error) {
+    console.error(error);
+    statusBox.textContent = `ERROR: ${error.message}`;
+  }
+}
+
+function buildMonth(rows, month, year, threshold, targetRate) {
+  const staff = rows.length;
+  const activeUsers = rows.filter(r => r.usage >= threshold).length;
+  const usages = rows.map(r => r.usage).sort((a,b) => a-b);
+  const days = rows.map(r => r.activeDays).sort((a,b) => a-b);
+  const centreGroups = groupBy(rows, r => r.centre);
+  const centreStats = Object.entries(centreGroups).map(([centre, group]) => {
+    const active = group.filter(r => r.usage >= threshold).length;
+    const groupUsages = group.map(r => r.usage).sort((a,b) => a-b);
+    return {centre, staff:group.length, active, roomForImprovement:group.length-active, adoptionRate:round(active/group.length*100,1), totalUsage:sum(groupUsages), medianUsage:round(median(groupUsages),1), zeroUsage:group.filter(r => r.usage===0).length};
+  }).sort((a,b) => b.adoptionRate-a.adoptionRate || b.staff-a.staff || a.centre.localeCompare(b.centre));
+  const leaders = [...rows].sort((a,b) => b.usage-a.usage).slice(0,10).map((r,index) => ({rank:index+1,label:`User ${String(index+1).padStart(2,'0')}`,centre:r.centre,usage:r.usage,activeDays:r.activeDays}));
+  const totalUsage = sum(usages);
+  const targetActiveUsers = Math.ceil(staff*targetRate/100);
+  return {
+    key:month,
+    label:`${titleCase(month)} ${year}`,
+    staff,
+    activeUsers,
+    roomForImprovement:staff-activeUsers,
+    adoptionRate:round(activeUsers/staff*100,1),
+    targetRate,
+    targetActiveUsers,
+    kpiGapUsers:activeUsers-targetActiveUsers,
+    kpiGapPercentagePoints:round(activeUsers/staff*100-targetRate,1),
+    totalUsage,
+    medianUsage:round(median(usages),1),
+    meanUsage:round(totalUsage/staff,1),
+    averageActiveDays:round(sum(days)/staff,1),
+    medianActiveDays:round(median(days),1),
+    zeroUsage:rows.filter(r => r.usage===0).length,
+    nearTarget:rows.filter(r => r.usage>=1 && r.usage<threshold).length,
+    sustainedUsers:rows.filter(r => r.activeDays>=8).length,
+    powerUsers:rows.filter(r => r.usage>=100).length,
+    top10UsageShare:totalUsage ? round(sum(leaders.map(x=>x.usage))/totalUsage*100,1) : 0,
+    engagementBands:[
+      {label:'No usage (0)',count:rows.filter(r=>r.usage===0).length},
+      {label:`Near target (1–${Math.max(threshold-1,1)})`,count:rows.filter(r=>r.usage>=1&&r.usage<threshold).length},
+      {label:`Active (${threshold}–9)`,count:rows.filter(r=>r.usage>=threshold&&r.usage<=9).length},
+      {label:'Regular (10–49)',count:rows.filter(r=>r.usage>=10&&r.usage<=49).length},
+      {label:'High (50–99)',count:rows.filter(r=>r.usage>=50&&r.usage<=99).length},
+      {label:'Power (100+)',count:rows.filter(r=>r.usage>=100).length}
+    ],
+    centreStats,
+    topUsers:leaders
+  };
+}
+
+function findDuplicateMonths(records, months) {
+  const warnings=[];
+  for(let i=1;i<months.length;i++){
+    const previous = records.filter(r=>r.month===months[i-1]).sort((a,b)=>a.email.localeCompare(b.email)).map(r=>`${r.email}|${r.usage}|${r.activeDays}`);
+    const current = records.filter(r=>r.month===months[i]).sort((a,b)=>a.email.localeCompare(b.email)).map(r=>`${r.email}|${r.usage}|${r.activeDays}`);
+    if(previous.length && previous.length===current.length && previous.every((v,j)=>v===current[j])){
+      warnings.push({type:'duplicate-month',months:[months[i-1],months[i]],message:`${titleCase(months[i-1])} and ${titleCase(months[i])} contain identical usage and active-day values for all ${previous.length} staff. Verify the source data before interpreting trends.`});
+    }
+  }
+  return warnings;
+}
+
+function requireSheet(workbook, name){ if(!workbook.Sheets[name]) throw new Error(`Required sheet “${name}” was not found.`); }
+function normaliseEmail(v){ return String(v||'').trim().toLowerCase(); }
+function toNumber(v){ const n=Number(String(v ?? '').replace(/,/g,'')); return Number.isFinite(n)?n:0; }
+function groupBy(values,keyFn){ return values.reduce((acc,item)=>{ const key=keyFn(item); (acc[key] ||= []).push(item); return acc; },{}); }
+function sum(values){ return values.reduce((a,b)=>a+b,0); }
+function median(values){ if(!values.length)return 0; const m=Math.floor(values.length/2); return values.length%2?values[m]:(values[m-1]+values[m])/2; }
+function round(value,dp){ const p=10**dp; return Math.round(value*p)/p; }
+function titleCase(v){ return String(v).toLowerCase().replace(/\b\w/g,c=>c.toUpperCase()); }
+</script>
+</body>
+</html>
